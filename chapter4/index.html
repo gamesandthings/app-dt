@@ -388,6 +388,8 @@
           let buffers = [];
 
           function fetchPart(index) {
+              document.getElementById("status").innerText =
+                "Downloading... (" + index + "/" + fileParts.length + ")";
               if (index >= fileParts.length) {
                   let mergedBlob = new Blob(buffers);
                   let mergedFileUrl = URL.createObjectURL(mergedBlob);
